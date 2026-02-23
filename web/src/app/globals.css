@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --warm-white: #faf9f7;
+  --charcoal: #2c2a28;
+  --warm-grey: #e8e6e3;
+  --accent-olive: #6b6f4a;
+  --accent-bronze: #8b7355;
+}
+
+body {
+  @apply bg-warm-white text-charcoal antialiased;
+}
+
+/* Persian / RTL-friendly */
+[dir="rtl"] {
+  font-family: var(--font-persian), Tahoma, sans-serif;
+}
