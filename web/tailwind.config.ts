@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-// Archlang design system: warm white, charcoal, warm grey, muted olive/bronze
+// فا design system — modern, calm, authoritative
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,13 +11,14 @@ export default {
     extend: {
       colors: {
         warm: {
-          white: "#faf9f7",
-          grey: "#e8e6e3",
+          white: "#fafaf8",
+          grey: "#eae8e5",
+          "grey-deep": "#d4d1cc",
         },
-        charcoal: "#2c2a28",
+        charcoal: "#1a1918",
         accent: {
-          olive: "#6b6f4a",
-          bronze: "#8b7355",
+          olive: "#5c6148",
+          bronze: "#7a6b5a",
         },
       },
       fontFamily: {
@@ -26,6 +27,17 @@ export default {
       },
       maxWidth: {
         content: "72rem",
+      },
+      borderRadius: {
+        "arch-sm": "var(--radius-sm)",
+        "arch-md": "var(--radius-md)",
+        "arch-lg": "var(--radius-lg)",
+        "arch-xl": "var(--radius-xl)",
+      },
+      boxShadow: {
+        "arch-sm": "var(--shadow-sm)",
+        "arch-md": "var(--shadow-md)",
+        "arch-lg": "var(--shadow-lg)",
       },
     },
   },

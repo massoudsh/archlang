@@ -15,16 +15,19 @@ const services = [
 
 export function ServicesSummary() {
   return (
-    <section className="border-t border-warm-grey bg-warm-white py-20">
+    <section className="border-t border-warm-grey-deep/50 bg-warm-white py-24 sm:py-28">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-medium text-charcoal sm:text-3xl">
+        <h2 className="text-2xl font-medium tracking-tight text-charcoal sm:text-3xl">
           خدمات
         </h2>
-        <div className="mt-12 grid gap-12 sm:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-3 sm:gap-8">
           {services.map((s) => (
-            <div key={s.title} className="space-y-3">
+            <div
+              key={s.title}
+              className="rounded-arch-lg border border-warm-grey-deep/40 bg-warm-white p-6 shadow-arch-sm transition-shadow hover:shadow-arch-md sm:p-8"
+            >
               <h3 className="text-lg font-medium text-charcoal">{s.title}</h3>
-              <p className="text-charcoal/80 leading-relaxed">{s.description}</p>
+              <p className="mt-3 text-charcoal/80 leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>

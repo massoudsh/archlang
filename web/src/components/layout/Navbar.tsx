@@ -10,21 +10,21 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-warm-grey/60 bg-warm-white/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-warm-grey-deep/40 bg-warm-white/90 backdrop-blur-md">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
         <nav className="flex h-16 items-center justify-between gap-8">
           <Link
             href="/"
-            className="text-lg font-medium text-charcoal transition-opacity hover:opacity-80"
+            className="text-lg font-medium tracking-tight text-charcoal transition-opacity hover:opacity-80 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-charcoal/20 focus-visible:ring-offset-2"
           >
-            Archlang
+            فا
           </Link>
-          <ul className="flex flex-wrap items-center gap-6">
+          <ul className="flex flex-wrap items-center gap-1 sm:gap-6">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-charcoal/90 transition-colors hover:text-charcoal"
+                  className="rounded-arch-sm px-3 py-2 text-charcoal/90 transition-colors hover:bg-warm-grey/50 hover:text-charcoal focus-visible:ring-2 focus-visible:ring-charcoal/20"
                 >
                   {item.label}
                 </Link>

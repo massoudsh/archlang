@@ -2,12 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dana — Persian font; loaded via layout link (fonts.cdnfonts.com) */
 :root {
-  --warm-white: #faf9f7;
-  --charcoal: #2c2a28;
-  --warm-grey: #e8e6e3;
-  --accent-olive: #6b6f4a;
-  --accent-bronze: #8b7355;
+  --warm-white: #fafaf8;
+  --charcoal: #1a1918;
+  --warm-grey: #eae8e5;
+  --warm-grey-deep: #d4d1cc;
+  --accent-olive: #5c6148;
+  --accent-bronze: #7a6b5a;
+  --font-persian: "Dana", "dana", Tahoma, sans-serif;
+  /* Modern tokens */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --shadow-sm: 0 1px 2px rgba(26, 25, 24, 0.04);
+  --shadow-md: 0 4px 12px rgba(26, 25, 24, 0.06);
+  --shadow-lg: 0 12px 40px rgba(26, 25, 24, 0.08);
 }
 
 body {
@@ -16,5 +27,11 @@ body {
 
 /* Persian / RTL-friendly */
 [dir="rtl"] {
-  font-family: var(--font-persian), Tahoma, sans-serif;
+  font-family: var(--font-persian);
+}
+
+/* Focus ring for a11y */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-none ring-2 ring-charcoal/30 ring-offset-2 ring-offset-warm-white;
 }
