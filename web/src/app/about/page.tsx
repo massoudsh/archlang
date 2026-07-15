@@ -17,18 +17,22 @@ const stats = [
 const philosophy = [
   {
     title: "کنترل",
+    tone: "bg-pastel-pink",
     desc: "هر پروژه از لحظه اول تا لحظه تحویل زیر یک نظارت واحد است. این یعنی وحدت بین ایده و اجرا.",
   },
   {
     title: "دقت",
+    tone: "bg-pastel-blue",
     desc: "جزئیات تفاوت را می‌سازند. از زاویه یک دیوار تا رنگ یک دستگیره — همه‌چیز با دقت تعیین می‌شود.",
   },
   {
     title: "اقتدار",
+    tone: "bg-pastel-peach",
     desc: "یک معمار باید بتواند به وضوح بگوید چرا. هر تصمیم دلیل دارد، هر دلیل قابل توضیح است.",
   },
   {
     title: "آرامش",
+    tone: "bg-pastel-mint",
     desc: "فضاهایی می‌سازم که در آن‌ها نفس کشیدن آسان‌تر است. سکوت بصری نوعی لوکس است.",
   },
 ];
@@ -64,21 +68,21 @@ export default function AboutPage() {
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-start">
           {/* Portrait placeholder */}
           <div
-            className="aspect-[3/4] rounded-arch-xl bg-warm-grey overflow-hidden"
+            className="aspect-[3/4] rounded-arch-xl bg-espresso overflow-hidden shadow-arch-lg"
             aria-label="تصویر معمار"
           >
-            <div className="h-full w-full bg-gradient-to-br from-warm-grey to-warm-grey-deep/60" />
+            <div className="h-full w-full bg-gradient-to-br from-espresso-light to-espresso" />
           </div>
 
           {/* Bio */}
           <div className="flex flex-col justify-center">
-            <p className="mb-3 text-xs tracking-widest text-accent-olive uppercase">
+            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
               About
             </p>
-            <h1 className="text-4xl font-light text-charcoal sm:text-5xl">
+            <h1 className="font-display text-4xl font-black text-charcoal sm:text-5xl">
               فرهاد اسکندری
             </h1>
-            <p className="mt-2 text-accent-bronze">معمار مسکونی</p>
+            <p className="mt-2 text-charcoal/50">معمار مسکونی</p>
 
             <div className="mt-8 space-y-5 text-charcoal/70 leading-[2] text-base">
               <p>
@@ -101,7 +105,7 @@ export default function AboutPage() {
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
-                  <p className="text-3xl font-light text-accent-bronze">{s.value}</p>
+                  <p className="text-3xl font-black text-coral">{s.value}</p>
                   <p className="mt-1 text-xs text-charcoal/50">{s.label}</p>
                 </div>
               ))}
@@ -111,21 +115,32 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="bg-charcoal py-20 sm:py-24">
-        <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden rounded-arch-xl bg-espresso py-20 sm:py-24">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-content px-4 sm:px-6 lg:px-8">
           <header className="mb-14">
-            <p className="mb-3 text-xs tracking-widest text-accent-olive uppercase">
+            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
               Philosophy
             </p>
-            <h2 className="text-3xl font-light text-warm-white">
+            <h2 className="text-3xl font-black text-warm-white">
               فلسفه طراحی
             </h2>
           </header>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {philosophy.map((item) => (
-              <article key={item.title} className="border-t border-warm-white/10 pt-6">
-                <h3 className="text-lg font-medium text-warm-white mb-3">{item.title}</h3>
-                <p className="text-warm-white/50 text-sm leading-[1.9]">{item.desc}</p>
+              <article
+                key={item.title}
+                className={`${item.tone} rounded-arch-xl p-6 shadow-arch-sm`}
+              >
+                <h3 className="text-lg font-bold text-espresso mb-3">{item.title}</h3>
+                <p className="text-espresso/70 text-sm leading-[1.9]">{item.desc}</p>
               </article>
             ))}
           </div>
@@ -135,18 +150,18 @@ export default function AboutPage() {
       {/* Experience timeline */}
       <section className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
         <header className="mb-12">
-          <p className="mb-3 text-xs tracking-widest text-accent-olive uppercase">
+          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
             Experience
           </p>
-          <h2 className="text-3xl font-light text-charcoal">سابقه حرفه‌ای</h2>
+          <h2 className="text-3xl font-black text-charcoal">سابقه حرفه‌ای</h2>
         </header>
         <ol className="space-y-0">
           {experience.map((exp, i) => (
             <li key={i} className="grid grid-cols-[1fr_auto] gap-6 border-b border-warm-grey-deep/40 py-8 last:border-none sm:grid-cols-[12rem_1fr]">
               <p className="text-sm text-charcoal/40 font-mono">{exp.period}</p>
               <div>
-                <p className="font-medium text-charcoal">{exp.role}</p>
-                <p className="mt-1 text-sm text-accent-bronze">{exp.place}</p>
+                <p className="font-bold text-charcoal">{exp.role}</p>
+                <p className="mt-1 text-sm text-coral">{exp.place}</p>
               </div>
             </li>
           ))}
@@ -157,14 +172,14 @@ export default function AboutPage() {
       <section className="bg-warm-grey/40 py-16 sm:py-20">
         <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-2xl font-light text-charcoal">بیایید با هم کار کنیم</h2>
+            <h2 className="text-2xl font-black text-charcoal">بیایید با هم کار کنیم</h2>
             <p className="mt-2 text-charcoal/60 text-sm">
               اگر پروژه‌ای دارید که به دقت و کنترل نیاز دارد، اینجا هستم.
             </p>
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-arch-md bg-charcoal px-7 py-3.5 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-charcoal/90"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-3.5 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-coral-dark focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2"
           >
             تماس بگیرید
           </Link>

@@ -24,9 +24,13 @@ cd web && npm install && npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). RTL Persian layout, design system (warm white, charcoal, olive/bronze), Home with Hero, Services, Featured projects, Authority block, CTA.
 
-**Stack (MVP):** Next.js (App Router), TailwindCSS, Framer Motion (minimal), static data, Vercel.
+**Stack (MVP):** Next.js (App Router), TailwindCSS, Framer Motion (minimal), static data, ArvanCloud (Docker/Container + CDN).
 
 **Scope:** Home, Projects, Project Detail, Services, About, Contact. No blog, no user accounts.
+
+## Deployment (ArvanCloud)
+
+The app is containerized (`web/Dockerfile`, Next.js standalone output) for ArvanCloud's Container/PaaS platform. See [DEPLOY.md](./DEPLOY.md) for build and deploy steps.
 
 ---
 

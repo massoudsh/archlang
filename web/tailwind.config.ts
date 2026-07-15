@@ -20,10 +20,32 @@ export default {
           olive: "#5c6148",
           bronze: "#7a6b5a",
         },
+        // Bold modern palette (redesign)
+        espresso: {
+          DEFAULT: "#211712",
+          light: "#332419",
+          border: "#3d2c20",
+        },
+        coral: {
+          DEFAULT: "#f97316",
+          dark: "#c2570c",
+          light: "#fb923c",
+        },
+        pastel: {
+          pink: "#f3dce2",
+          "pink-deep": "#e9c3cd",
+          blue: "#dbe8f3",
+          "blue-deep": "#c2d9ec",
+          peach: "#f5e3cf",
+          "peach-deep": "#ecd0ac",
+          yellow: "#f3e6ab",
+          mint: "#dbe9df",
+        },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         persian: ["var(--font-persian)", "Tahoma", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-persian)", "Tahoma", "sans-serif"],
       },
       maxWidth: {
         content: "72rem",

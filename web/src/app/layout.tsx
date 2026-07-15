@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+
+const displayFont = Vazirmatn({
+  subsets: ["arabic"],
+  weight: ["700", "800", "900"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fa-arch.ir";
 
@@ -70,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className={displayFont.variable}>
       <head>
         <link href="https://fonts.cdnfonts.com/css/dana" rel="stylesheet" />
         <script

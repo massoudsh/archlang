@@ -47,7 +47,7 @@ Traceable to [ARCHITECTURE.md](./ARCHITECTURE.md) and [ROADMAP.md](./ROADMAP.md)
 - [ ] **X6** Semantic HTML, contrast, keyboard access
 - [ ] **X7** Form rate limiting / spam protection
 - [ ] **X8** Lighthouse > 90
-- [ ] Deploy to Vercel, verify form and performance
+- [ ] Deploy to ArvanCloud, verify form and performance
 
 ---
 

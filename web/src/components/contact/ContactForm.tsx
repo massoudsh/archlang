@@ -35,9 +35,9 @@ function clientValidate(data: FormState): FieldErrors {
 }
 
 const fieldBase =
-  "w-full rounded-arch-md border px-4 py-3 text-sm text-charcoal placeholder:text-charcoal/30 bg-warm-white transition-colors focus:outline-none focus:ring-2 focus:ring-charcoal/20";
+  "w-full rounded-arch-md border px-4 py-3 text-sm text-charcoal placeholder:text-charcoal/30 bg-warm-white transition-colors focus:outline-none focus:ring-2 focus:ring-coral/20";
 const fieldNormal =
-  "border-warm-grey-deep/50 hover:border-warm-grey-deep focus:border-charcoal/30";
+  "border-warm-grey-deep/50 hover:border-warm-grey-deep focus:border-coral/40";
 const fieldErr = "border-red-400 focus:ring-red-300";
 
 export function ContactForm() {
@@ -98,14 +98,14 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-arch-xl border border-warm-grey-deep/40 bg-warm-grey/40 px-8 py-14 text-center">
-        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-accent-olive/10" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent-olive">
+      <div className="rounded-arch-xl bg-pastel-mint px-8 py-14 text-center shadow-arch-sm">
+        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-coral" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-warm-white">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="text-xl font-light text-charcoal mb-2">درخواست ارسال شد</h3>
-        <p className="text-charcoal/60 text-sm leading-relaxed">
+        <h3 className="text-xl font-bold text-espresso mb-2">درخواست ارسال شد</h3>
+        <p className="text-espresso/70 text-sm leading-relaxed">
           در اسرع وقت — معمولاً ظرف ۲۴ ساعت — با شما تماس می‌گیریم.
         </p>
       </div>
@@ -215,7 +215,7 @@ export function ContactForm() {
 
       <button
         type="submit" disabled={status === "submitting"}
-        className="w-full rounded-arch-md bg-charcoal px-6 py-4 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-charcoal/90 hover:shadow-arch-lg disabled:opacity-60 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-charcoal/20 focus-visible:ring-offset-2"
+        className="w-full rounded-full bg-coral px-6 py-4 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-coral-dark hover:shadow-arch-lg disabled:opacity-60 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2"
       >
         {status === "submitting" ? "در حال ارسال..." : "ارسال درخواست"}
       </button>

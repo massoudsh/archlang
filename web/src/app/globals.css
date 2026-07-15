@@ -35,3 +35,23 @@ a:focus-visible,
 button:focus-visible {
   @apply outline-none ring-2 ring-charcoal/30 ring-offset-2 ring-offset-warm-white;
 }
+
+/* Marquee ticker — RTL-aware infinite scroll */
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-rtl 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

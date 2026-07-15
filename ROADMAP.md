@@ -82,7 +82,7 @@
 | X6 | Semantic HTML, contrast, keyboard access | ⬜ |
 | X7 | Form rate limiting / spam protection | ⬜ |
 | X8 | Lighthouse &gt; 90 | ⬜ |
-| — | Deploy to Vercel, verify form and performance | ⬜ |
+| — | Deploy to ArvanCloud, verify form and performance | ⬜ |
 
 **Outcome:** Production-ready, fast, accessible, SEO-friendly.
 

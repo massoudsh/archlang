@@ -30,10 +30,10 @@ export default async function ProjectDetailPage({ params }: Props) {
     <main>
       {/* Hero banner */}
       <section
-        className="relative min-h-[55vh] flex flex-col justify-end overflow-hidden"
+        className="relative min-h-[55vh] flex flex-col justify-end overflow-hidden rounded-b-arch-xl"
         style={{ backgroundColor: project.coverColor }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/30 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-content px-4 pb-16 pt-32 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav aria-label="مسیر" className="mb-6 flex items-center gap-2 text-sm text-warm-white/60">
@@ -46,15 +46,15 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           <span
             className={[
-              "inline-block rounded-arch-sm px-3 py-1 text-xs font-medium mb-4",
+              "inline-block rounded-full px-3 py-1 text-xs font-medium mb-4",
               project.type === "ساخته‌شده"
-                ? "bg-warm-white/20 text-warm-white"
-                : "bg-warm-white/10 text-warm-white/80",
+                ? "bg-coral text-warm-white"
+                : "bg-warm-white/90 text-charcoal",
             ].join(" ")}
           >
             {project.type}
           </span>
-          <h1 className="text-4xl font-light text-warm-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl font-black text-warm-white sm:text-5xl lg:text-6xl">
             {project.title}
           </h1>
           <p className="mt-3 text-lg text-warm-white/70">{project.subtitle}</p>
@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           aria-label="گالری تصاویر پروژه"
           className="mx-auto max-w-content px-4 pt-12 sm:px-6 lg:px-8"
         >
-          <p className="mb-6 text-xs tracking-widest text-accent-olive uppercase">
+          <p className="mb-6 text-sm font-medium tracking-[0.3em] text-coral uppercase">
             Gallery
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -75,7 +75,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               <figure
                 key={i}
                 className={[
-                  "overflow-hidden rounded-arch-lg",
+                  "overflow-hidden rounded-arch-xl shadow-arch-sm",
                   i === 0 ? "sm:col-span-2" : "",
                   item.aspect,
                 ].join(" ")}
@@ -101,35 +101,35 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="lg:col-span-2 space-y-12">
             {/* Description */}
             <section>
-              <h2 className="mb-4 text-xs tracking-widest text-accent-olive uppercase">درباره پروژه</h2>
+              <h2 className="mb-4 text-sm font-medium tracking-[0.3em] text-coral uppercase">درباره پروژه</h2>
               <p className="text-charcoal/80 leading-[2] text-lg font-light">
                 {project.description}
               </p>
             </section>
 
             {/* Designer note */}
-            <section className="border-r-2 border-accent-olive pr-6">
-              <p className="mb-2 text-xs tracking-widest text-accent-olive uppercase">یادداشت طراح</p>
-              <blockquote className="text-charcoal/70 leading-[1.9] italic text-base">
+            <section className="border-r-2 border-coral pr-6">
+              <p className="mb-2 text-sm font-medium tracking-[0.3em] text-coral uppercase">یادداشت طراح</p>
+              <blockquote className="text-charcoal/70 leading-[1.9] text-base">
                 «{project.designerNote}»
               </blockquote>
             </section>
 
             {/* Role clarification */}
             {project.roleNote && (
-              <section className="rounded-arch-md border border-warm-grey-deep/40 bg-warm-grey/30 px-5 py-4">
-                <p className="text-xs tracking-widest text-accent-olive uppercase mb-1">نقش طراح در این پروژه</p>
+              <section className="rounded-arch-xl bg-pastel-peach px-5 py-4">
+                <p className="text-xs font-medium tracking-widest text-espresso/60 uppercase mb-1">نقش طراح در این پروژه</p>
                 <p className="text-sm text-charcoal/70">{project.roleNote}</p>
               </section>
             )}
 
             {/* Scope */}
             <section>
-              <h2 className="mb-5 text-xs tracking-widest text-accent-olive uppercase">حوزه کار</h2>
+              <h2 className="mb-5 text-sm font-medium tracking-[0.3em] text-coral uppercase">حوزه کار</h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {project.scope.map((item) => (
                   <li key={item} className="flex items-center gap-3 text-charcoal/70">
-                    <span className="h-1 w-4 rounded-full bg-accent-olive/50 shrink-0" aria-hidden="true" />
+                    <span className="h-1 w-4 rounded-full bg-coral/50 shrink-0" aria-hidden="true" />
                     {item}
                   </li>
                 ))}
@@ -139,7 +139,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           {/* Sidebar metadata */}
           <aside className="space-y-8">
-            <div className="rounded-arch-lg border border-warm-grey-deep/40 bg-warm-grey/30 p-6 space-y-5">
+            <div className="rounded-arch-xl bg-warm-grey/40 p-6 space-y-5">
               {(
                 [
                   { label: "سال", value: project.year },
@@ -157,7 +157,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
             {/* Materials */}
             <div>
-              <h3 className="mb-4 text-xs tracking-widest text-accent-olive uppercase">مصالح</h3>
+              <h3 className="mb-4 text-sm font-medium tracking-[0.3em] text-coral uppercase">مصالح</h3>
               <ul className="space-y-2">
                 {project.materials.map((m) => (
                   <li key={m} className="flex items-center gap-2 text-sm text-charcoal/60">
@@ -173,13 +173,13 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
 
             {/* CTA */}
-            <div className="rounded-arch-lg bg-charcoal p-6 text-center">
-              <p className="text-sm text-warm-white/70 mb-4 leading-relaxed">
+            <div className="rounded-arch-xl bg-coral p-6 text-center shadow-arch-md">
+              <p className="text-sm text-warm-white/85 mb-4 leading-relaxed">
                 پروژه مشابهی در ذهن دارید؟
               </p>
               <Link
                 href="/contact"
-                className="inline-block w-full rounded-arch-md bg-warm-white px-4 py-3 text-sm font-medium text-charcoal transition-all hover:bg-warm-grey hover:shadow-arch-md"
+                className="inline-block w-full rounded-full bg-warm-white px-4 py-3 text-sm font-medium text-charcoal transition-all hover:bg-espresso hover:text-warm-white hover:shadow-arch-md"
               >
                 درخواست مشاوره
               </Link>
@@ -191,7 +191,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="mt-16 pt-8 border-t border-warm-grey-deep/40">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-charcoal/50 hover:text-charcoal transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-charcoal/50 hover:text-coral transition-colors"
           >
             <span aria-hidden>←</span>
             بازگشت به همه پروژه‌ها

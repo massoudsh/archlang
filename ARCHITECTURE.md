@@ -88,7 +88,7 @@ If the UI becomes flashy, cluttered, or animation-heavy, it fails positioning.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Vercel / Edge                             │
+│                     ArvanCloud (Container/PaaS)                  │
 ├─────────────────────────────────────────────────────────────────┤
 │  Next.js App Router (SSR/SSG)                                   │
 │  ├── Pages: /, /projects, /projects/[slug], /services,           │
@@ -97,7 +97,7 @@ If the UI becomes flashy, cluttered, or animation-heavy, it fails positioning.
 │  ├── Static data: content/*.json or markdown                      │
 │  └── Form: Contact → API route → Email (e.g. Resend/SendGrid)     │
 ├─────────────────────────────────────────────────────────────────┤
-│  Assets: Optimized images (WebP), lazy load, CDN                 │
+│  Assets: Optimized images (WebP), lazy load, ArvanCloud CDN       │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -115,7 +115,7 @@ If the UI becomes flashy, cluttered, or animation-heavy, it fails positioning.
 | Styling | TailwindCSS |
 | Motion | Framer Motion (minimal: subtle fades only) |
 | Data | Static JSON or Markdown |
-| Hosting | Vercel (or similar) |
+| Hosting | ArvanCloud (Docker container via Container/PaaS + CDN) |
 | Form/Email | API route + email provider (Resend, SendGrid, etc.) |
 
 ---

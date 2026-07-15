@@ -31,14 +31,14 @@ export function ProjectFilter() {
             aria-selected={active === opt.value}
             onClick={() => setActive(opt.value)}
             className={[
-              "rounded-arch-md px-5 py-2.5 text-sm transition-all focus-visible:ring-2 focus-visible:ring-charcoal/20",
+              "rounded-full px-5 py-2.5 text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-charcoal/20",
               active === opt.value
-                ? "bg-charcoal text-warm-white shadow-arch-sm"
+                ? "bg-coral text-warm-white shadow-arch-sm"
                 : "text-charcoal/70 hover:bg-warm-grey/70 hover:text-charcoal",
             ].join(" ")}
           >
             {opt.label}
-            <span className="mr-2 text-xs opacity-60">
+            <span className="mr-2 text-xs opacity-70">
               {opt.value === "all"
                 ? projects.length
                 : projects.filter((p) => p.type === opt.value).length}
@@ -53,21 +53,21 @@ export function ProjectFilter() {
           <li key={project.slug}>
             <Link
               href={`/projects/${project.slug}`}
-              className="group block overflow-hidden rounded-arch-lg border border-warm-grey-deep/30 bg-warm-white shadow-arch-sm transition-all hover:shadow-arch-md focus-visible:ring-2 focus-visible:ring-charcoal/20"
+              className="group block overflow-hidden rounded-arch-xl bg-warm-white shadow-arch-sm transition-all hover:-translate-y-1 hover:shadow-arch-md focus-visible:ring-2 focus-visible:ring-charcoal/20"
             >
               {/* Placeholder image area */}
               <div
                 className="relative aspect-[4/3] overflow-hidden"
                 style={{ backgroundColor: project.coverColor }}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 {/* Type badge */}
                 <span
                   className={[
-                    "absolute right-3 top-3 rounded-arch-sm px-3 py-1 text-xs font-medium",
+                    "absolute right-3 top-3 rounded-full px-3 py-1 text-xs font-medium",
                     project.type === "ساخته‌شده"
-                      ? "bg-charcoal/80 text-warm-white"
-                      : "bg-warm-white/80 text-charcoal",
+                      ? "bg-espresso text-warm-white"
+                      : "bg-warm-white/90 text-charcoal",
                   ].join(" ")}
                 >
                   {project.type}
@@ -78,7 +78,7 @@ export function ProjectFilter() {
                 <p className="text-xs text-charcoal/50 mb-1">
                   {project.year} — {project.location}
                 </p>
-                <h2 className="text-lg font-medium text-charcoal transition-colors group-hover:text-accent-olive">
+                <h2 className="text-lg font-bold text-charcoal transition-colors group-hover:text-coral">
                   {project.title}
                 </h2>
                 <p className="mt-1 text-sm text-charcoal/60">
