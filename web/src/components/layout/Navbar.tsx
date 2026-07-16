@@ -8,28 +8,26 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-warm-white/90 backdrop-blur-md">
-      <div className="mx-auto max-w-content px-4 py-3 sm:px-6 lg:px-8">
-        <nav className="flex h-14 items-center justify-between gap-4 rounded-full border border-warm-grey-deep/50 bg-warm-white px-3 shadow-arch-sm sm:px-5">
+    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-warm-white/92 backdrop-blur-md">
+      <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
+        <nav className="grid min-h-20 grid-cols-[1fr_auto] items-center gap-4 border-x border-charcoal/10 px-4 sm:grid-cols-[1fr_auto_1fr] sm:px-6">
           <Link
             href="/"
-            className="flex items-center gap-2 font-display text-lg font-black tracking-tight text-charcoal transition-opacity hover:opacity-80 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-charcoal/20"
+            className="flex items-center gap-3 font-display text-xl font-black tracking-tight text-charcoal transition-opacity hover:opacity-70"
           >
-            <span
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-warm-white text-sm"
-              aria-hidden="true"
-            >
-              ف
+            <span className="relative flex h-9 w-9 items-center justify-center bg-charcoal text-sm text-warm-white" aria-hidden="true">
+              <span className="absolute inset-x-1 top-2 h-1.5 bg-warm-white" />
+              <span className="absolute bottom-2 right-2 h-1.5 w-5 bg-warm-white" />
             </span>
             فا
           </Link>
 
-          <ul className="hidden items-center gap-1 sm:flex">
+          <ul className="hidden items-center gap-0 sm:flex">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium tracking-wide text-charcoal/70 transition-colors hover:bg-warm-grey/70 hover:text-charcoal focus-visible:ring-2 focus-visible:ring-charcoal/20"
+                  className="block border-x border-charcoal/10 px-6 py-3 text-xs font-bold uppercase tracking-[0.22em] text-charcoal/70 transition-colors hover:bg-charcoal hover:text-warm-white"
                 >
                   {item.label}
                 </Link>
@@ -39,19 +37,18 @@ export function Navbar() {
 
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-coral px-4 py-2.5 text-sm font-medium text-warm-white transition-all hover:bg-coral-dark hover:shadow-arch-md focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2 sm:px-5"
+            className="justify-self-end border border-charcoal bg-charcoal px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-warm-white transition-colors hover:bg-material-glass"
           >
-            تماس با ما
-            <span aria-hidden="true" className="inline-block -rotate-45">↗</span>
+            تماس ←
           </Link>
         </nav>
 
-        <ul className="mt-2 flex items-center justify-center gap-1 sm:hidden">
+        <ul className="flex border-x border-t border-charcoal/10 sm:hidden">
           {navItems.map((item) => (
-            <li key={item.href}>
+            <li key={item.href} className="flex-1 border-l border-charcoal/10 last:border-l-0">
               <Link
                 href={item.href}
-                className="rounded-full px-3 py-1.5 text-xs font-medium text-charcoal/70 transition-colors hover:bg-warm-grey/70 hover:text-charcoal"
+                className="block px-3 py-3 text-center text-xs font-bold text-charcoal/70 hover:bg-charcoal hover:text-warm-white"
               >
                 {item.label}
               </Link>

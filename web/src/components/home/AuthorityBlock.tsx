@@ -1,28 +1,7 @@
 const testimonials = [
-  {
-    rating: "۴.۸",
-    quote:
-      "تیم فا از ایده تا اجرا همراه ما بود و ارتباطی محکم و شفاف برقرار کرد.",
-    name: "بهرام وثیقی",
-    role: "کارفرما — ویلا شمیران",
-    tone: "bg-pastel-blue",
-  },
-  {
-    rating: "۴.۹",
-    quote:
-      "تمرکز روی عملکرد و بودجه، در کنار نوآوری در طراحی — دقیقاً چیزی که می‌خواستیم.",
-    name: "مریم وودز",
-    role: "کارفرما — پنت‌هاوس الهیه",
-    tone: "bg-pastel-pink",
-  },
-  {
-    rating: "۴.۹",
-    quote:
-      "در هر مرحله سخت تلاش کردند تا بهترین نتیجه ممکن را برای پروژه ما رقم بزنند.",
-    name: "سینا بلندی",
-    role: "کارفرما — مسکونی لواسان",
-    tone: "bg-pastel-peach",
-  },
+  { rating: "۴.۸", quote: "انتقال از ایده به اجرا کاملاً شفاف، دقیق و قابل کنترل بود.", name: "بهرام وثیقی", role: "کارفرما — ویلا شمیران" },
+  { rating: "۴.۹", quote: "جزئیات فنی و کنترل کیفیت در کارگاه، پروژه را از یک طرح معمولی جدا کرد.", name: "مریم وودز", role: "کارفرما — پنت‌هاوس الهیه" },
+  { rating: "۴.۹", quote: "هر تصمیم دلیل داشت؛ همین موضوع اعتماد ما را در کل مسیر حفظ کرد.", name: "سینا بلندی", role: "کارفرما — مسکونی لواسان" },
 ];
 
 const stats = [
@@ -33,52 +12,40 @@ const stats = [
 
 export function AuthorityBlock() {
   return (
-    <section className="bg-warm-white py-24 sm:py-28">
-      <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-3xl font-black text-charcoal sm:text-4xl">
-          مشتریان <span className="text-coral">موفق</span> در حال رشدند
-        </h2>
+    <section className="bg-warm-white py-20 sm:py-24">
+      <div className="mx-auto max-w-content border-x border-charcoal/10 px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr]">
+          <div className="border border-charcoal/12 bg-material-asphalt p-7 text-warm-white material-grid">
+            <p className="mb-6 border-r-4 border-material-glass pr-3 text-xs font-black uppercase tracking-[0.24em] text-warm-white/70">
+              Proven Results
+            </p>
+            <h2 className="font-display text-4xl font-black leading-tight sm:text-5xl">
+              اعتماد با نتیجه‌های قابل مشاهده ساخته می‌شود
+            </h2>
+          </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-3">
-          {testimonials.map((t) => (
-            <article
-              key={t.name}
-              className={`${t.tone} flex flex-col justify-between rounded-arch-xl p-6 shadow-arch-sm`}
-            >
-              <div className="mb-6 flex items-center justify-between">
-                <span className="text-xs font-medium tracking-wide text-charcoal/50 uppercase">
-                  [ نظر مشتری ]
-                </span>
-                <span className="flex items-center gap-1 text-sm font-bold text-charcoal">
-                  {t.rating}
-                  <span className="text-coral" aria-hidden="true">★</span>
-                </span>
-              </div>
-              <p className="text-sm leading-relaxed text-charcoal/80">
-                {t.quote}
-              </p>
-              <div className="mt-6 flex items-center gap-3">
-                <span
-                  className="h-9 w-9 shrink-0 rounded-full bg-espresso/15"
-                  aria-hidden="true"
-                />
-                <div>
-                  <p className="text-sm font-bold text-charcoal">{t.name}</p>
-                  <p className="text-xs text-charcoal/50">{t.role}</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {testimonials.map((t) => (
+              <article key={t.name} className="border border-charcoal/12 bg-warm-white p-5 shadow-arch-sm">
+                <div className="mb-7 flex items-center justify-between border-b border-charcoal/10 pb-4">
+                  <span className="text-[11px] font-black uppercase tracking-[0.2em] text-charcoal/45">[ Client ]</span>
+                  <span className="text-lg font-black text-material-glass">{t.rating}</span>
                 </div>
-              </div>
-            </article>
-          ))}
+                <p className="min-h-24 text-sm leading-7 text-charcoal/72">{t.quote}</p>
+                <div className="mt-7 border-t border-charcoal/10 pt-4">
+                  <p className="text-sm font-black text-charcoal">{t.name}</p>
+                  <p className="mt-1 text-xs text-charcoal/45">{t.role}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
-        {/* Stats row */}
-        <div className="mt-14 grid gap-6 border-t border-warm-grey-deep/50 pt-10 sm:grid-cols-3">
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
           {stats.map((s) => (
-            <div key={s.label} className="text-center sm:text-right">
-              <p className="font-display text-4xl font-black text-coral sm:text-5xl">
-                {s.value}
-              </p>
-              <p className="mt-1 text-sm text-charcoal/60">{s.label}</p>
+            <div key={s.label} className="border border-charcoal/12 bg-material-sand p-6">
+              <p className="font-display text-5xl font-black text-charcoal">{s.value}</p>
+              <p className="mt-3 text-xs font-black uppercase tracking-[0.2em] text-charcoal/50">{s.label}</p>
             </div>
           ))}
         </div>

@@ -35,9 +35,9 @@ function clientValidate(data: FormState): FieldErrors {
 }
 
 const fieldBase =
-  "w-full rounded-arch-md border px-4 py-3 text-sm text-charcoal placeholder:text-charcoal/30 bg-warm-white transition-colors focus:outline-none focus:ring-2 focus:ring-coral/20";
+  "w-full border bg-warm-white px-4 py-3 text-sm text-charcoal placeholder:text-charcoal/30 transition-colors focus:outline-none focus:ring-2 focus:ring-material-glass/20";
 const fieldNormal =
-  "border-warm-grey-deep/50 hover:border-warm-grey-deep focus:border-coral/40";
+  "border-warm-grey-deep/70 hover:border-charcoal/30 focus:border-material-glass/60";
 const fieldErr = "border-red-400 focus:ring-red-300";
 
 export function ContactForm() {
@@ -98,14 +98,14 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-arch-xl bg-pastel-mint px-8 py-14 text-center shadow-arch-sm">
-        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-coral" aria-hidden="true">
+      <div className="border border-charcoal/12 bg-material-sand px-8 py-14 text-center shadow-arch-sm">
+        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center bg-material-glass" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-warm-white">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-espresso mb-2">درخواست ارسال شد</h3>
-        <p className="text-espresso/70 text-sm leading-relaxed">
+        <h3 className="text-xl font-bold text-charcoal mb-2">درخواست ارسال شد</h3>
+        <p className="text-charcoal/70 text-sm leading-relaxed">
           در اسرع وقت — معمولاً ظرف ۲۴ ساعت — با شما تماس می‌گیریم.
         </p>
       </div>
@@ -115,7 +115,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       {serverError && (
-        <div role="alert" className="rounded-arch-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div role="alert" className="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {serverError}
         </div>
       )}
@@ -215,7 +215,7 @@ export function ContactForm() {
 
       <button
         type="submit" disabled={status === "submitting"}
-        className="w-full rounded-full bg-coral px-6 py-4 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-coral-dark hover:shadow-arch-lg disabled:opacity-60 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2"
+        className="w-full border border-charcoal bg-charcoal px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-warm-white shadow-arch-md transition-all hover:bg-material-glass disabled:opacity-60 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-material-glass/40 focus-visible:ring-offset-2"
       >
         {status === "submitting" ? "در حال ارسال..." : "ارسال درخواست"}
       </button>

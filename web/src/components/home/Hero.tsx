@@ -1,51 +1,25 @@
 import Link from "next/link";
 
-// Simple geometric "tower" silhouette built with CSS grid — swap for real photography later
-function BuildingIllustration() {
+function BlueprintBlock() {
   return (
-    <div className="relative mx-auto flex h-full w-full max-w-xs items-end justify-center sm:max-w-sm">
-      {/* Decorative circle (compass motif) */}
-      <div
-        aria-hidden="true"
-        className="absolute -left-6 top-4 hidden h-40 w-40 rounded-full border border-warm-white/10 sm:block lg:h-52 lg:w-52"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -left-2 top-10 hidden h-28 w-28 rounded-full border border-warm-white/10 sm:block lg:h-36 lg:w-36"
-      />
-
-      {/* Floating clouds */}
-      <span
-        aria-hidden="true"
-        className="absolute -top-4 right-2 h-6 w-14 rounded-full bg-warm-white/10 blur-[1px]"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute top-16 right-16 h-5 w-10 rounded-full bg-warm-white/10 blur-[1px]"
-      />
-
-      {/* Stacked tower blocks */}
-      <div className="relative flex flex-col items-center">
-        {[
-          { w: "w-44", h: "h-24", tone: "bg-pastel-peach" },
-          { w: "w-36", h: "h-28", tone: "bg-pastel-peach-deep" },
-          { w: "w-48", h: "h-32", tone: "bg-coral-light" },
-        ].map((block, i) => (
-          <div
-            key={i}
-            className={`${block.w} ${block.h} ${block.tone} relative -mb-1 rounded-t-2xl shadow-arch-lg`}
-          >
-            <div className="grid h-full grid-cols-4 gap-1.5 p-2.5">
-              {Array.from({ length: 8 }).map((_, j) => (
-                <span
-                  key={j}
-                  className="rounded-sm bg-espresso/25"
-                  aria-hidden="true"
-                />
+    <div className="relative h-full min-h-[32rem] overflow-hidden border border-warm-white/16 bg-material-glass blueprint shadow-arch-lg">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-material-asphalt/10 to-material-asphalt/45" />
+      <div className="absolute left-8 top-8 h-44 w-44 border border-warm-white/25" aria-hidden="true" />
+      <div className="absolute left-20 top-20 h-28 w-28 border border-warm-white/20" aria-hidden="true" />
+      <div className="absolute bottom-0 right-12 flex items-end gap-0" aria-hidden="true">
+        {["h-52", "h-72", "h-44", "h-64"].map((height, i) => (
+          <div key={i} className={`${height} w-20 border border-warm-white/22 bg-material-asphalt/50 p-2`}>
+            <div className="grid h-full grid-cols-2 gap-1">
+              {Array.from({ length: 16 }).map((_, j) => (
+                <span key={j} className="border border-warm-white/14" />
               ))}
             </div>
           </div>
         ))}
+      </div>
+      <div className="absolute bottom-8 left-8 border border-warm-white/20 bg-warm-white px-5 py-4 text-charcoal">
+        <p className="text-xs font-black uppercase tracking-[0.22em]">YOUR VISION.</p>
+        <p className="mt-1 text-xs font-black uppercase tracking-[0.22em]">OUR FOUNDATION.</p>
       </div>
     </div>
   );
@@ -53,75 +27,38 @@ function BuildingIllustration() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden rounded-b-arch-xl bg-espresso">
-      {/* Subtle dot grid texture */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
-      />
-
-      <div className="relative z-10 mx-auto grid max-w-content gap-10 px-4 pb-16 pt-14 sm:px-6 sm:pt-20 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:pb-24 lg:pt-24">
-        {/* Text column */}
-        <div>
-          <h1 className="max-w-lg font-display text-4xl font-black leading-[1.25] text-warm-white sm:text-5xl lg:text-6xl">
-            طراحی با <span className="text-coral">حس زیبایی‌شناسی</span>
-          </h1>
-          <p className="mt-6 max-w-md text-warm-white/50 leading-relaxed">
-            مسکن‌های لوکس خصوصی را از ایده تا تحویل، با کنترل کامل بر طراحی و
-            اجرا، می‌سازیم.
-          </p>
-
-          {/* Avatar stack + note */}
-          <div className="mt-10 flex items-center gap-3">
-            <div className="flex -space-x-3 space-x-reverse" aria-hidden="true">
-              {["bg-pastel-blue", "bg-pastel-pink", "bg-coral"].map((c, i) => (
-                <span
-                  key={i}
-                  className={`h-9 w-9 rounded-full border-2 border-espresso ${c}`}
-                />
-              ))}
-            </div>
-            <p className="text-sm text-warm-white/50">
-              معماران ارشد آماده مشاوره
+    <section className="relative overflow-hidden bg-material-asphalt text-warm-white">
+      <div className="material-grid absolute inset-0 opacity-80" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-content border-x border-warm-white/10 px-4 py-8 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-10">
+        <div className="flex min-h-[36rem] flex-col justify-between border-b border-warm-white/10 pb-8 lg:border-b-0 lg:border-l lg:pb-0 lg:pl-10">
+          <div>
+            <p className="mb-10 w-fit border-r-4 border-material-glass pr-4 text-xs font-black uppercase tracking-[0.28em] text-warm-white/72">
+              Residential Architecture
+            </p>
+            <h1 className="max-w-3xl font-display text-5xl font-black leading-[1.12] tracking-tight text-warm-white sm:text-7xl lg:text-8xl">
+              ساختن پایه‌های دقیق برای زندگی ماندگار
+            </h1>
+            <p className="mt-8 max-w-xl text-base leading-9 text-warm-white/58 sm:text-lg">
+              طراحی، توسعه فنی و مدیریت اجرای خانه‌های خصوصی با زبانی صنعتی، دقیق و متریال‌محور.
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-coral px-7 py-3.5 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-coral-dark hover:shadow-arch-lg focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2 focus-visible:ring-offset-espresso"
-            >
-              درخواست جلسه مشاوره
+          <div className="mt-12 grid gap-4 sm:grid-cols-[auto_1fr] sm:items-end">
+            <Link href="/contact" className="border border-warm-white bg-warm-white px-7 py-4 text-center text-xs font-black uppercase tracking-[0.22em] text-charcoal transition-colors hover:bg-material-glass hover:text-warm-white">
+              شروع پروژه ←
             </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-warm-white/70 transition-colors hover:text-warm-white"
-            >
-              مشاهده پروژه‌ها
-              <span aria-hidden="true">←</span>
-            </Link>
+            <div className="grid grid-cols-3 border border-warm-white/14">
+              {["۱۵+ سال", "۴۰+ پروژه", "۱۲۰+ خانواده"].map((item) => (
+                <span key={item} className="border-l border-warm-white/14 px-4 py-4 text-center text-xs font-bold text-warm-white/70 last:border-l-0">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Illustration column */}
-        <div className="relative flex h-72 items-end justify-center sm:h-80 lg:h-[26rem]">
-          <BuildingIllustration />
-
-          {/* Floating badge */}
-          <Link
-            href="/about"
-            className="absolute left-0 top-0 hidden -rotate-3 rounded-2xl bg-coral px-5 py-4 text-center text-xs font-bold leading-tight text-warm-white shadow-arch-lg transition-transform hover:rotate-0 focus-visible:ring-2 focus-visible:ring-warm-white/40 sm:block"
-          >
-            داستان
-            <br />
-            ما را
-            <br />
-            بخوانید
-          </Link>
+        <div className="pt-8 lg:pt-0 lg:pr-10">
+          <BlueprintBlock />
         </div>
       </div>
     </section>

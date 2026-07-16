@@ -2,56 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dana — Persian font; loaded via layout link (fonts.cdnfonts.com) */
 :root {
-  --warm-white: #fafaf8;
-  --charcoal: #1a1918;
-  --warm-grey: #eae8e5;
-  --warm-grey-deep: #d4d1cc;
-  --accent-olive: #5c6148;
-  --accent-bronze: #7a6b5a;
+  --warm-white: #FEFCF9;
+  --charcoal: #222222;
+  --warm-grey: #F0E5D3;
+  --warm-grey-deep: #cfc7ba;
+  --accent-olive: #5B5B5D;
+  --accent-bronze: #6D8598;
   --font-persian: "Dana", "dana", Tahoma, sans-serif;
-  /* Modern tokens */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --shadow-sm: 0 1px 2px rgba(26, 25, 24, 0.04);
-  --shadow-md: 0 4px 12px rgba(26, 25, 24, 0.06);
-  --shadow-lg: 0 12px 40px rgba(26, 25, 24, 0.08);
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --shadow-sm: 0 1px 0 rgba(34, 34, 34, 0.08);
+  --shadow-md: 0 16px 40px rgba(34, 34, 34, 0.12);
+  --shadow-lg: 0 32px 90px rgba(34, 34, 34, 0.22);
+}
+
+html {
+  background: #FEFCF9;
 }
 
 body {
   @apply bg-warm-white text-charcoal antialiased;
+  background-image:
+    linear-gradient(to right, rgba(34, 34, 34, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 34, 34, 0.055) 1px, transparent 1px);
+  background-size: 96px 96px;
 }
 
-/* Persian / RTL-friendly */
 [dir="rtl"] {
   font-family: var(--font-persian);
 }
 
-/* Focus ring for a11y */
 a:focus-visible,
-button:focus-visible {
-  @apply outline-none ring-2 ring-charcoal/30 ring-offset-2 ring-offset-warm-white;
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  @apply outline-none ring-2 ring-material-glass/50 ring-offset-2 ring-offset-warm-white;
 }
 
-/* Marquee ticker — RTL-aware infinite scroll */
+::selection {
+  background: #6D8598;
+  color: #FEFCF9;
+}
+
 @keyframes marquee-rtl {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(50%);
-  }
+  from { transform: translateX(0%); }
+  to { transform: translateX(50%); }
 }
 
 .animate-marquee {
   animation: marquee-rtl 28s linear infinite;
 }
 
+.material-grid {
+  background-image:
+    linear-gradient(to right, rgba(254, 252, 249, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(254, 252, 249, 0.16) 1px, transparent 1px);
+  background-size: 78px 78px;
+}
+
+.light-grid {
+  background-image:
+    linear-gradient(to right, rgba(34, 34, 34, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 34, 34, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.concrete-texture {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.14) 0 1px, transparent 1px),
+    radial-gradient(circle at 72% 65%, rgba(0,0,0,.18) 0 1px, transparent 1px),
+    linear-gradient(135deg, rgba(255,255,255,.08), rgba(0,0,0,.12));
+  background-size: 22px 22px, 31px 31px, 100% 100%;
+}
+
+.blueprint {
+  background-image:
+    linear-gradient(to right, rgba(254,252,249,.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(254,252,249,.18) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 48%, rgba(254,252,249,.38) 49%, rgba(254,252,249,.38) 51%, transparent 52%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
+  .animate-marquee { animation: none; }
 }

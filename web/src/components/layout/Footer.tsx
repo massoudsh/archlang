@@ -14,38 +14,31 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-espresso text-warm-white/70">
-      <div className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 sm:grid-cols-3">
-          {/* Brand */}
+    <footer className="relative overflow-hidden bg-material-asphalt text-warm-white">
+      <div className="material-grid absolute inset-0 opacity-70" aria-hidden="true" />
+      <div className="relative mx-auto max-w-content border-x border-warm-white/10 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-10 border-b border-warm-white/12 pb-12 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2 font-display text-xl font-black text-warm-white">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-coral text-warm-white text-base"
-                aria-hidden="true"
-              >
-                ف
+            <div className="flex items-center gap-3 font-display text-2xl font-black">
+              <span className="relative h-10 w-10 bg-warm-white" aria-hidden="true">
+                <span className="absolute right-2 top-2 h-2 w-6 bg-charcoal" />
+                <span className="absolute bottom-2 right-2 h-2 w-5 bg-charcoal" />
               </span>
               فا
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-white/50">
-              طراحی خلاقانه می‌کنیم و باکیفیت‌ترین راه‌حل‌ها را برای معماری
-              مسکونی می‌سازیم.
+            <p className="mt-6 max-w-sm text-sm leading-8 text-warm-white/58">
+              طراحی، توسعه فنی و مدیریت اجرای پروژه‌های مسکونی با منطق سازه، متریال و کنترل دقیق جزئیات.
             </p>
           </div>
 
-          {/* Nav */}
           <nav aria-label="لینک‌های فوتر">
-            <p className="mb-4 text-xs tracking-widest text-coral uppercase">
-              صفحات
+            <p className="mb-5 border-r-4 border-material-glass pr-3 text-xs font-bold uppercase tracking-[0.24em] text-warm-white/80">
+              Navigation
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-0 border-t border-warm-white/12">
               {columns.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-warm-white/70 transition-colors hover:text-warm-white focus-visible:rounded focus-visible:ring-2 focus-visible:ring-coral/40"
-                  >
+                <li key={item.href} className="border-b border-warm-white/12">
+                  <Link href={item.href} className="block py-3 text-sm text-warm-white/68 transition-colors hover:text-warm-white">
                     {item.label}
                   </Link>
                 </li>
@@ -53,38 +46,27 @@ export function Footer() {
             </ul>
           </nav>
 
-          {/* Social + legal */}
           <div>
-            <p className="mb-4 text-xs tracking-widest text-coral uppercase">
-              ارتباط
+            <p className="mb-5 border-r-4 border-material-glass pr-3 text-xs font-bold uppercase tracking-[0.24em] text-warm-white/80">
+              Contact
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-0 border-t border-warm-white/12">
               {socials.map((s) => (
-                <li key={s.href}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-warm-white/70 transition-colors hover:text-warm-white focus-visible:rounded focus-visible:ring-2 focus-visible:ring-coral/40"
-                  >
+                <li key={s.href} className="border-b border-warm-white/12">
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="block py-3 text-sm text-warm-white/68 transition-colors hover:text-warm-white">
                     {s.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-xs text-warm-white/30">
-              © {new Date().getFullYear()} فا. تمامی حقوق محفوظ است.
+            <p className="mt-8 text-xs uppercase tracking-[0.2em] text-warm-white/35">
+              © {new Date().getFullYear()} FA ARCHITECTURE
             </p>
           </div>
         </div>
       </div>
-
-      {/* Giant background typography */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none select-none border-t border-espresso-border py-4 text-center font-display text-[16vw] font-black leading-none tracking-tighter text-warm-white/5 sm:text-[10vw]"
-      >
-        معماری
+      <div aria-hidden="true" className="relative -mb-6 border-t border-warm-white/10 text-center font-display text-[18vw] font-black leading-none tracking-tighter text-warm-white/[0.045]">
+        FOUNDATION
       </div>
     </footer>
   );

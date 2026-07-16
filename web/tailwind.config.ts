@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-// فا design system — modern, calm, authoritative
+// فا design system — industrial architecture / material grid
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,35 +11,26 @@ export default {
     extend: {
       colors: {
         warm: {
-          white: "#fafaf8",
-          grey: "#eae8e5",
-          "grey-deep": "#d4d1cc",
+          white: "#FEFCF9",
+          grey: "#F0E5D3",
+          "grey-deep": "#cfc7ba",
         },
-        charcoal: "#1a1918",
+        charcoal: "#222222",
         accent: {
-          olive: "#5c6148",
-          bronze: "#7a6b5a",
+          olive: "#5B5B5D",
+          bronze: "#6D8598",
         },
-        // Bold modern palette (redesign)
         espresso: {
-          DEFAULT: "#211712",
-          light: "#332419",
-          border: "#3d2c20",
+          DEFAULT: "#222222",
+          light: "#303032",
+          border: "#5B5B5D",
         },
-        coral: {
-          DEFAULT: "#f97316",
-          dark: "#c2570c",
-          light: "#fb923c",
-        },
-        pastel: {
-          pink: "#f3dce2",
-          "pink-deep": "#e9c3cd",
-          blue: "#dbe8f3",
-          "blue-deep": "#c2d9ec",
-          peach: "#f5e3cf",
-          "peach-deep": "#ecd0ac",
-          yellow: "#f3e6ab",
-          mint: "#dbe9df",
+        material: {
+          plaster: "#FEFCF9",
+          glass: "#6D8598",
+          asphalt: "#222222",
+          sand: "#F0E5D3",
+          concrete: "#5B5B5D",
         },
       },
       fontFamily: {
@@ -48,7 +39,7 @@ export default {
         display: ["var(--font-display)", "var(--font-persian)", "Tahoma", "sans-serif"],
       },
       maxWidth: {
-        content: "72rem",
+        content: "86rem",
       },
       borderRadius: {
         "arch-sm": "var(--radius-sm)",

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-      <p className="font-display text-8xl font-black text-coral select-none" aria-hidden>
+      <p className="font-display text-8xl font-black text-material-glass select-none" aria-hidden>
         ۴۰۴
       </p>
       <h1 className="mt-6 font-display text-2xl font-black text-charcoal">
@@ -20,13 +20,13 @@ export default function NotFound() {
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
         <Link
           href="/"
-          className="rounded-full bg-coral px-7 py-3 text-sm font-medium text-warm-white shadow-arch-sm transition-all hover:bg-coral-dark hover:shadow-arch-md focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2"
+          className="border border-charcoal bg-charcoal px-7 py-3 text-sm font-black uppercase tracking-[0.14em] text-warm-white shadow-arch-sm transition-all hover:bg-material-glass focus-visible:ring-2 focus-visible:ring-material-glass/40 focus-visible:ring-offset-2"
         >
           برگشت به صفحه اصلی
         </Link>
         <Link
           href="/projects"
-          className="rounded-full border border-charcoal/15 px-7 py-3 text-sm font-medium text-charcoal/80 transition-all hover:bg-charcoal hover:text-warm-white"
+          className="border border-charcoal/15 px-7 py-3 text-sm font-black uppercase tracking-[0.14em] text-charcoal/80 transition-all hover:bg-charcoal hover:text-warm-white"
         >
           مشاهده پروژه‌ها
         </Link>

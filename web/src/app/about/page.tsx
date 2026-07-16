@@ -17,22 +17,18 @@ const stats = [
 const philosophy = [
   {
     title: "کنترل",
-    tone: "bg-pastel-pink",
     desc: "هر پروژه از لحظه اول تا لحظه تحویل زیر یک نظارت واحد است. این یعنی وحدت بین ایده و اجرا.",
   },
   {
     title: "دقت",
-    tone: "bg-pastel-blue",
     desc: "جزئیات تفاوت را می‌سازند. از زاویه یک دیوار تا رنگ یک دستگیره — همه‌چیز با دقت تعیین می‌شود.",
   },
   {
     title: "اقتدار",
-    tone: "bg-pastel-peach",
     desc: "یک معمار باید بتواند به وضوح بگوید چرا. هر تصمیم دلیل دارد، هر دلیل قابل توضیح است.",
   },
   {
     title: "آرامش",
-    tone: "bg-pastel-mint",
     desc: "فضاهایی می‌سازم که در آن‌ها نفس کشیدن آسان‌تر است. سکوت بصری نوعی لوکس است.",
   },
 ];
@@ -68,7 +64,7 @@ export default function AboutPage() {
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-start">
           {/* Portrait placeholder */}
           <div
-            className="aspect-[3/4] rounded-arch-xl bg-espresso overflow-hidden shadow-arch-lg"
+            className="border border-charcoal/12 bg-material-asphalt overflow-hidden shadow-arch-lg concrete-texture"
             aria-label="تصویر معمار"
           >
             <div className="h-full w-full bg-gradient-to-br from-espresso-light to-espresso" />
@@ -76,7 +72,7 @@ export default function AboutPage() {
 
           {/* Bio */}
           <div className="flex flex-col justify-center">
-            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
+            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-material-glass uppercase">
               About
             </p>
             <h1 className="font-display text-4xl font-black text-charcoal sm:text-5xl">
@@ -105,7 +101,7 @@ export default function AboutPage() {
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
-                  <p className="text-3xl font-black text-coral">{s.value}</p>
+                  <p className="text-3xl font-black text-material-glass">{s.value}</p>
                   <p className="mt-1 text-xs text-charcoal/50">{s.label}</p>
                 </div>
               ))}
@@ -115,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="relative overflow-hidden rounded-arch-xl bg-espresso py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-material-asphalt material-grid py-20 sm:py-24">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.07]"
@@ -126,7 +122,7 @@ export default function AboutPage() {
         />
         <div className="relative z-10 mx-auto max-w-content px-4 sm:px-6 lg:px-8">
           <header className="mb-14">
-            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
+            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-material-glass uppercase">
               Philosophy
             </p>
             <h2 className="text-3xl font-black text-warm-white">
@@ -137,10 +133,10 @@ export default function AboutPage() {
             {philosophy.map((item) => (
               <article
                 key={item.title}
-                className={`${item.tone} rounded-arch-xl p-6 shadow-arch-sm`}
+                className={`border border-charcoal/12 bg-warm-white p-6 shadow-arch-sm`}
               >
-                <h3 className="text-lg font-bold text-espresso mb-3">{item.title}</h3>
-                <p className="text-espresso/70 text-sm leading-[1.9]">{item.desc}</p>
+                <h3 className="text-lg font-bold text-charcoal mb-3">{item.title}</h3>
+                <p className="text-charcoal/70 text-sm leading-[1.9]">{item.desc}</p>
               </article>
             ))}
           </div>
@@ -150,7 +146,7 @@ export default function AboutPage() {
       {/* Experience timeline */}
       <section className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
         <header className="mb-12">
-          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
+          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-material-glass uppercase">
             Experience
           </p>
           <h2 className="text-3xl font-black text-charcoal">سابقه حرفه‌ای</h2>
@@ -161,7 +157,7 @@ export default function AboutPage() {
               <p className="text-sm text-charcoal/40 font-mono">{exp.period}</p>
               <div>
                 <p className="font-bold text-charcoal">{exp.role}</p>
-                <p className="mt-1 text-sm text-coral">{exp.place}</p>
+                <p className="mt-1 text-sm text-material-glass">{exp.place}</p>
               </div>
             </li>
           ))}
@@ -179,7 +175,7 @@ export default function AboutPage() {
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-3.5 text-sm font-medium text-warm-white shadow-arch-md transition-all hover:bg-coral-dark focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2"
+            className="shrink-0 inline-flex items-center gap-2 border border-charcoal bg-charcoal px-7 py-3.5 text-sm font-black uppercase tracking-[0.14em] text-warm-white shadow-arch-md transition-all hover:bg-material-glass focus-visible:ring-2 focus-visible:ring-material-glass/40 focus-visible:ring-offset-2"
           >
             تماس بگیرید
           </Link>

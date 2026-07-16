@@ -12,18 +12,11 @@ const filterOptions: { label: string; value: "all" | ProjectType }[] = [
 
 export function ProjectFilter() {
   const [active, setActive] = useState<"all" | ProjectType>("all");
-
-  const filtered =
-    active === "all" ? projects : projects.filter((p) => p.type === active);
+  const filtered = active === "all" ? projects : projects.filter((p) => p.type === active);
 
   return (
     <div>
-      {/* Filter tabs */}
-      <div
-        role="tablist"
-        className="mb-12 flex items-center gap-2"
-        aria-label="فیلتر پروژه‌ها"
-      >
+      <div role="tablist" className="mb-10 grid gap-2 sm:flex" aria-label="فیلتر پروژه‌ها">
         {filterOptions.map((opt) => (
           <button
             key={opt.value}
@@ -31,71 +24,41 @@ export function ProjectFilter() {
             aria-selected={active === opt.value}
             onClick={() => setActive(opt.value)}
             className={[
-              "rounded-full px-5 py-2.5 text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-charcoal/20",
+              "border px-5 py-3 text-xs font-black uppercase tracking-[0.18em] transition-colors",
               active === opt.value
-                ? "bg-coral text-warm-white shadow-arch-sm"
-                : "text-charcoal/70 hover:bg-warm-grey/70 hover:text-charcoal",
+                ? "border-charcoal bg-charcoal text-warm-white"
+                : "border-charcoal/15 bg-warm-white text-charcoal/65 hover:bg-material-sand hover:text-charcoal",
             ].join(" ")}
           >
             {opt.label}
-            <span className="mr-2 text-xs opacity-70">
-              {opt.value === "all"
-                ? projects.length
-                : projects.filter((p) => p.type === opt.value).length}
+            <span className="mr-3 opacity-60">
+              {opt.value === "all" ? projects.length : projects.filter((p) => p.type === opt.value).length}
             </span>
           </button>
         ))}
       </div>
 
-      {/* Projects grid */}
-      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((project) => (
-          <li key={project.slug}>
-            <Link
-              href={`/projects/${project.slug}`}
-              className="group block overflow-hidden rounded-arch-xl bg-warm-white shadow-arch-sm transition-all hover:-translate-y-1 hover:shadow-arch-md focus-visible:ring-2 focus-visible:ring-charcoal/20"
-            >
-              {/* Placeholder image area */}
-              <div
-                className="relative aspect-[4/3] overflow-hidden"
-                style={{ backgroundColor: project.coverColor }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                {/* Type badge */}
-                <span
-                  className={[
-                    "absolute right-3 top-3 rounded-full px-3 py-1 text-xs font-medium",
-                    project.type === "ساخته‌شده"
-                      ? "bg-espresso text-warm-white"
-                      : "bg-warm-white/90 text-charcoal",
-                  ].join(" ")}
-                >
-                  {project.type}
-                </span>
-              </div>
-              {/* Card content */}
-              <div className="p-5">
-                <p className="text-xs text-charcoal/50 mb-1">
-                  {project.year} — {project.location}
-                </p>
-                <h2 className="text-lg font-bold text-charcoal transition-colors group-hover:text-coral">
-                  {project.title}
-                </h2>
-                <p className="mt-1 text-sm text-charcoal/60">
-                  {project.subtitle}
-                </p>
-                <p className="mt-3 text-xs text-charcoal/40">{project.area}</p>
+      <ul className="grid auto-rows-[22rem] gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((project, i) => (
+          <li key={project.slug} className={i === 0 ? "lg:col-span-2" : ""}>
+            <Link href={`/projects/${project.slug}`} className="group relative block h-full overflow-hidden border border-charcoal/12 bg-warm-white p-5 shadow-arch-sm transition-transform hover:-translate-y-1">
+              <div className="absolute inset-0 concrete-texture opacity-70" style={{ backgroundColor: project.coverColor }} aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
+              <div className="relative z-10 flex h-full flex-col justify-between text-warm-white">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="border border-warm-white/40 px-3 py-1 text-[11px] font-black uppercase tracking-[0.2em] text-warm-white/82">{project.type}</span>
+                  <span className="text-xs font-black uppercase tracking-[0.2em] text-warm-white/55">0{i + 1}</span>
+                </div>
+                <div>
+                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-warm-white/62">{project.year} / {project.location} / {project.area}</p>
+                  <h2 className="text-2xl font-black leading-tight transition-colors group-hover:text-material-sand">{project.title}</h2>
+                  <p className="mt-2 max-w-md text-sm leading-7 text-warm-white/68">{project.subtitle}</p>
+                </div>
               </div>
             </Link>
           </li>
         ))}
       </ul>
-
-      {filtered.length === 0 && (
-        <p className="py-20 text-center text-charcoal/40">
-          پروژه‌ای یافت نشد.
-        </p>
-      )}
     </div>
   );
 }

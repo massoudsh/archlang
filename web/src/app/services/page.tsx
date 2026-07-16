@@ -12,7 +12,6 @@ const services = [
     number: "۰۱",
     title: "طراحی معماری",
     tagline: "از ایده تا نقشه",
-    tone: "bg-pastel-pink",
     description:
       "فرایند طراحی با درک دقیق از سبک زندگی، نیازها، و آرزوهای شما شروع می‌شود. سپس مفهوم اولیه شکل می‌گیرد، بررسی می‌شود، و به مجموعه کامل نقشه‌های اجرایی تبدیل می‌شود.",
     items: [
@@ -27,7 +26,6 @@ const services = [
     number: "۰۲",
     title: "توسعه فنی",
     tagline: "دقت در جزئیات",
-    tone: "bg-pastel-blue",
     description:
       "جزئیات اجرایی، مشخصات فنی مصالح، و هماهنگی کامل بین تمام مشاوران. این مرحله تضمین می‌کند که آنچه طراحی شده، دقیقاً ساخته شود.",
     items: [
@@ -42,7 +40,6 @@ const services = [
     number: "۰۳",
     title: "مدیریت اجرا",
     tagline: "کنترل از آغاز تا تحویل",
-    tone: "bg-pastel-peach",
     description:
       "حضور منظم در کارگاه، نظارت بر کیفیت اجرا، کنترل هزینه، و مدیریت پیمانکاران. هدف: دقیقاً آنچه طراحی شده، در بودجه و زمان تعیین‌شده تحویل داده شود.",
     items: [
@@ -68,7 +65,7 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-b-arch-xl bg-espresso py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-material-asphalt material-grid py-24 sm:py-32">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.07]"
@@ -78,11 +75,11 @@ export default function ServicesPage() {
           }}
         />
         <div className="relative z-10 mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-          <p className="mb-4 text-sm font-medium tracking-[0.3em] text-coral uppercase">
+          <p className="mb-4 text-sm font-medium tracking-[0.3em] text-material-glass uppercase">
             Services
           </p>
           <h1 className="max-w-2xl font-display text-4xl font-black leading-[1.25] text-warm-white sm:text-5xl lg:text-6xl">
-            یک دیدگاه واحد از <span className="text-coral">ایده تا تحویل</span>
+            یک دیدگاه واحد از <span className="text-material-glass">ایده تا تحویل</span>
           </h1>
           <p className="mt-6 max-w-xl text-warm-white/50 leading-relaxed text-lg">
             طراحی و اجرا در زیر یک سقف — بدون شکاف بین آنچه تصور می‌شود و
@@ -110,18 +107,18 @@ export default function ServicesPage() {
                 <h2 className="mt-4 text-2xl font-bold text-charcoal sm:text-3xl">
                   {service.title}
                 </h2>
-                <p className="mt-1 text-sm font-medium text-coral">{service.tagline}</p>
+                <p className="mt-1 text-sm font-medium text-material-glass">{service.tagline}</p>
                 <p className="mt-5 text-charcoal/70 leading-[2] text-base">
                   {service.description}
                 </p>
               </div>
               {/* Items list */}
-              <div className={`${service.tone} rounded-arch-xl p-8 shadow-arch-sm`}>
+              <div className={`border border-charcoal/12 bg-warm-white p-8 shadow-arch-sm`}>
                 <ul className="space-y-4">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-espresso/80 text-sm leading-relaxed">
+                    <li key={item} className="flex items-start gap-3 text-charcoal/72 text-sm leading-relaxed">
                       <span
-                        className="mt-1.5 h-2 w-2 rounded-full bg-coral shrink-0"
+                        className="mt-1.5 h-2 w-2 bg-material-glass shrink-0"
                         aria-hidden
                       />
                       {item}
@@ -138,7 +135,7 @@ export default function ServicesPage() {
       <section className="bg-warm-grey/40 py-20 sm:py-24">
         <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
           <header className="mb-14 text-center">
-            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-coral uppercase">
+            <p className="mb-3 text-sm font-medium tracking-[0.3em] text-material-glass uppercase">
               Process
             </p>
             <h2 className="text-3xl font-black text-charcoal">
@@ -155,7 +152,7 @@ export default function ServicesPage() {
             <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
               {workflowSteps.map((s) => (
                 <li key={s.step} className="flex flex-col items-center text-center lg:relative">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-coral text-warm-white text-sm font-medium shadow-arch-sm relative z-10">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-material-glass bg-material-glass text-warm-white text-sm font-medium shadow-arch-sm relative z-10">
                     {s.step}
                   </span>
                   <h3 className="mt-4 font-bold text-charcoal text-sm">{s.title}</h3>
@@ -177,7 +174,7 @@ export default function ServicesPage() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-coral px-8 py-4 text-warm-white shadow-arch-md transition-all hover:bg-coral-dark hover:shadow-arch-lg focus-visible:ring-2 focus-visible:ring-coral/40 focus-visible:ring-offset-2"
+          className="inline-flex items-center gap-2 border border-charcoal bg-charcoal px-8 py-4 text-warm-white shadow-arch-md transition-all hover:bg-material-glass hover:shadow-arch-lg focus-visible:ring-2 focus-visible:ring-material-glass/40 focus-visible:ring-offset-2"
         >
           درخواست جلسه مشاوره
         </Link>
